@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    position: fixed;
+    top: 0px;
+    min-width: 600px;
+    }
+    .header span {
+        float: right;
+    }
+
+.container {
+    position: fixed;
+    top: 30px;
+}
+
+.view {
+    width: 640px;
+    float: left;
+    margin-left: 20px;
+    }
+    .view span {
+        float: left;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        font-size: 12px;
+        cursor: pointer
+        }
+        .view span:hover,
+        .view span.current {
+            background: lightblue;
+            }
+
+.tmp {
+    float: right;
+    /*height: 20000px;*/
+    width: 1px;
+}
