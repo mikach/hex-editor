@@ -1,4 +1,6 @@
 hex-editor
 ==========
 
-Simple hex editor based on https://github.com/jDataView/jBinary.Hex
+Project based on https://github.com/jDataView/jBinary.Hex
+
+Demo http://mikach.github.io/hex-editor/
