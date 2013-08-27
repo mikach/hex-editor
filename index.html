@@ -10,14 +10,17 @@
 
     <div class="header">
         <file></file>
-        <span>Position: <b>0x{{toHex(current || 0, 8)}} ({{current}})</b></span>
+        <span>Position: <b>0x{{toHex(current || 0, 8)}} ({{current || 0}})</b></span>
     </div>
 
-    <div class="container">
-        <div class="view view-hex" ng-show="items.length > 0">
+    <div class="container" ng-show="items.length > 0">
+        <div class="view view-offset">
+            <b ng-repeat="pos in positions">{{pos}}</b>
+        </div>
+        <div class="view view-hex">
             <span ng-repeat="item in items" ng-class="{current: current == $index + offset}" ng-click="setCurrent($index + offset)">{{toHex(item, 2)}}</span>
         </div>
-        <div class="view view-char" ng-show="items.length > 0">
+        <div class="view view-char">
             <span ng-repeat="item in items" ng-class="{current: current == $index + offset}" ng-click="setCurrent($index + offset)">{{toChar(item)}}</span>
         </div>
     </div>

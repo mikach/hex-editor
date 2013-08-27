@@ -4,6 +4,7 @@ var MainCtrl = function($scope) {
     $scope.cols = Math.floor( window.innerHeight/20 - 2 );
 
     $scope.items = [];
+    $scope.positions = [];
 
     $scope.toHex = function (number, length) {
         var s = number.toString(16).toUpperCase();
@@ -29,10 +30,15 @@ var MainCtrl = function($scope) {
     $scope.loadItems = function() {
         var data = $scope.binary.read(['blob', Math.min($scope.rows * $scope.cols - 1, $scope.binary.view.byteLength - $scope.offset)], $scope.offset);
         $scope.items = [];
+        $scope.positions = [];
         for (var i in data) {
             if (typeof data[i] !== 'object' && typeof data[i] !== 'function') 
             $scope.items.push(data[i]);
         }
+        for (i = 0; i < $scope.cols; i += 1) {
+            $scope.positions.push( $scope.toHex($scope.offset + i*32, 8) );
+        }
+        console.log($scope.positions);
         $scope.$apply();
     };
 

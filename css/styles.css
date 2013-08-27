@@ -28,13 +28,29 @@
         height: 20px;
         line-height: 20px;
         text-align: center;
-        font-size: 12px;
+        font-size: 11px;
         cursor: pointer
         }
         .view span:hover,
         .view span.current {
             background: lightblue;
             }
+
+.view-char {
+    width: 320px;
+    }
+    .view-char span {
+        width: 10px;
+        }
+
+.view-offset {
+    width: 50px;
+    }
+    .view-offset b {
+        float: left;
+        font-size: 12px;
+        line-height: 20px;
+    }
 
 .tmp {
     float: right;
